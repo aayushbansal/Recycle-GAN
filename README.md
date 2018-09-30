@@ -70,6 +70,6 @@ An advanced version of prediction module is a higher capacity module by setting 
 At test time, we do inference per image (as mentioned previously). The test code is based on cycle-gan.
 
 
-### Data & Trained Models:
+## Data & Trained Models:
 
-Please contact [Aayush Bansal](http://cs.cmu.edu/~aayushb) for any specific data or trained models, or any other information. 
+Please contact [Aayush Bansal](http://cs.cmu.edu/~aayushb) for any specific data or trained models, or for any other information. 
