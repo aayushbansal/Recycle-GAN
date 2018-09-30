@@ -1,6 +1,8 @@
 # Recycle-GAN :Unsupervised Video Retargeting 
 
-This repository provides the code for our work on unsupervised video retargeting. 
+[![Watch the video](http://www.cs.cmu.edu/~aayushb/Recycle-GAN/teaser.png)](https://youtu.be/ehD3C60i6lw)
+
+This repository provides the code for our work on [unsupervised video retargeting](http://www.cs.cmu.edu/~aayushb/Recycle-GAN/). 
 
 ```make
 @inproceedings{Recycle-GAN,
