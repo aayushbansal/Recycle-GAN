@@ -24,7 +24,7 @@ We use this formulation in our ECCV'18 paper on unsupervised video retargeting f
 
 The repository contains the code for training a network for retargeting from one domain to another, and use a trained module for this task. Following are the things to consider with this code:
 
-### Data Pre-processing
+### Data pre-processing
 
 For each task, create a new folder in "dataset/" directory. The images from two domains are placed respectively in "trainA/" and "trainB/". Each image file consists of horizontally concatenated images, "{t, t+1, t+2}" frames from the video. The test images are placed in "testA/" and "testB/". Since we do not use temporal information at test time, 
 
@@ -53,7 +53,7 @@ If you want to use this prediction module, please set the flag "--which_model_ne
 An advanced version of prediction module is a higher capacity module by setting the flag "--which_model_netP" to "prediction".
 
 
-### Test
+## Test
 
 At test time, we do inference per image (as mentioned previously). The test code is based on cycle-gan.
 
