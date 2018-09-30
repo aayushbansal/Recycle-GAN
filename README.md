@@ -19,11 +19,13 @@ Acknowledgements: This code borrows heavily from the PyTorch implementation of [
 
 ### John Oliver to Stephen Colbert
 [![John Oliver to Stephen Colbert](https://img.youtube.com/vi/VWXFqDdqLbE/0.jpg)](https://www.youtube.com/watch?v=VWXFqDdqLbE)
+
 Click above to see video!
 
 
 ### Video by CMU Media folks
 [![Video by CMU folks!](https://img.youtube.com/vi/ehD3C60i6lw/0.jpg)](https://youtu.be/ehD3C60i6lw)
+
 Click above to see video!
 
 ## Introduction
