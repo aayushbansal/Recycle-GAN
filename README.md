@@ -1,6 +1,9 @@
 # Recycle-GAN :Unsupervised Video Retargeting 
 
-[![Watch the video](http://www.cs.cmu.edu/~aayushb/Recycle-GAN/teaser.png)](https://youtu.be/ehD3C60i6lw)
+[![John Oliver to Stephen Colbert](https://img.youtube.com/vi/VWXFqDdqLbE/0.jpg)](https://www.youtube.com/watch?v=VWXFqDdqLbE)
+
+
+[![Video by CMU folks!](https://img.youtube.com/vi/ehD3C60i6lw/0.jpg)](https://youtu.be/ehD3C60i6lw)
 
 This repository provides the code for our work on [unsupervised video retargeting](http://www.cs.cmu.edu/~aayushb/Recycle-GAN/). 
 
