@@ -65,7 +65,7 @@ If you want to use this prediction module, please set the flag "--which_model_ne
 An advanced version of prediction module is a higher capacity module by setting the flag "--which_model_netP" to "prediction".
 
 
-### Observation about training: 
+## Observation about training: 
 
 We observed that model converges in 20-40 epochs when sufficiently large data is used. For smaller datasets (ones having 1000 images or less), it is suitable to let it train for longer.
 
