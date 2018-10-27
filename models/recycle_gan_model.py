@@ -45,9 +45,9 @@ class RecycleGANModel(BaseModel):
 						opt.npf, opt.which_model_netP, opt.norm, not opt.no_dropout, opt.init_type, self.gpu_ids)
 	else: 
         	self.netP_A = networks.define_G(2*opt.input_nc, opt.input_nc,
-                	                        opt.ngf, 'unet_128', opt.norm, not opt.no_dropout, opt.init_type, self.gpu_ids)
+                	                        opt.ngf, opt.which_model_netP, opt.norm, not opt.no_dropout, opt.init_type, self.gpu_ids)
         	self.netP_B = networks.define_G(2*opt.output_nc, opt.output_nc,
-                	                        opt.ngf, 'unet_128', opt.norm, not opt.no_dropout, opt.init_type, self.gpu_ids)
+                	                        opt.ngf, opt.which_model_netP, opt.norm, not opt.no_dropout, opt.init_type, self.gpu_ids)
 
         if self.isTrain:
             use_sigmoid = opt.no_lsgan
