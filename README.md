@@ -78,7 +78,7 @@ At test time, we do inference per image (as mentioned previously). The test code
 
 Please use following links to download Face, Flowers, and Viper data: 
 
-1. [Faces (10 GB)](https://www.dropbox.com/s/qhu29y5cx4lyfun/Viper_data.tar.gz?dl=0) 
+1. [Faces (10 GB)](https://www.dropbox.com/s/s6kzovbrevin5tr/faces.tar.gz?dl=0) 
 2. [Flowers (1.6 GB)](https://www.dropbox.com/s/f8nnulkcsovxwmf/flowers.tar.gz?dl=0)
 3. [Viper (3.17 GB)](https://www.dropbox.com/s/qhu29y5cx4lyfun/Viper_data.tar.gz?dl=0)
 
