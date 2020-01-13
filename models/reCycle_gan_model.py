@@ -18,6 +18,8 @@ class ReCycleGANModel(BaseModel):
     def initialize(self, opt):
         BaseModel.initialize(self, opt)
 
+        self.adversarial_loss_p = opt.adversarial_loss_p
+
         nb = opt.batchSize
         size = opt.fineSize
         self.input_A0 = self.Tensor(nb, opt.input_nc, size, size)
@@ -311,6 +313,15 @@ class ReCycleGANModel(BaseModel):
 
         loss_pred_B = self.criterionCycle(pred_B2, self.real_B2) * lambda_B
 
+        if self.adversarial_loss_p:
+            pred_fake = self.netD_B(pred_A2)
+            loss_pred_A_adversarial = self.criterionGAN(pred_fake, True)
+            pred_fake = self.netD_A(pred_B2)
+            loss_pred_B_adversarial = self.criterionGAN(pred_fake, True)
+        else:
+            loss_pred_A_adversarial = 0
+            loss_pred_B_adversarial = 0
+
         # Forward recycle loss
         rec_A = self.netG_B(fake_B2)
         loss_recycle_A = self.criterionCycle(rec_A, self.real_A2) * lambda_A
@@ -333,7 +344,9 @@ class ReCycleGANModel(BaseModel):
         loss_cycle_B1 = self.criterionCycle(rec_B1, self.real_B1) * lambda_B
 
         # combined loss
-        loss_G = loss_G_A0 + loss_G_A1 + loss_G_A2 + loss_G_B0 + loss_G_B1 + loss_G_B2 + loss_recycle_A + loss_recycle_B + loss_pred_A + loss_pred_B + loss_idt_A + loss_idt_B + loss_cycle_A0 + loss_cycle_A1 + loss_cycle_B0 + loss_cycle_B1
+        loss_G = (loss_G_A0 + loss_G_A1 + loss_G_A2 + loss_G_B0 + loss_G_B1 + loss_G_B2 + loss_recycle_A +
+                  loss_recycle_B + loss_pred_A + loss_pred_B + loss_idt_A + loss_idt_B + loss_cycle_A0 +
+                  loss_cycle_A1 + loss_cycle_B0 + loss_cycle_B1 + loss_pred_A_adversarial + loss_pred_B_adversarial)
         loss_G.backward()
 
         self.fake_B0 = fake_B0.data
@@ -358,6 +371,10 @@ class ReCycleGANModel(BaseModel):
 
         self.loss_cycle_A = loss_cycle_A0.data[0] + loss_cycle_A1.data[0]
         self.loss_cycle_B = loss_cycle_B0.data[0] + loss_cycle_B1.data[0]
+
+        if self.adversarial_loss_p:
+            self.loss_pred_A_adversarial = loss_pred_A_adversarial.data[0]
+            self.loss_pred_B_adversarial = loss_pred_B_adversarial.data[0]
 
     def optimize_parameters(self):
         # forward
@@ -385,6 +402,9 @@ class ReCycleGANModel(BaseModel):
         if self.opt.identity > 0.0:
             ret_errors['idt_A'] = self.loss_idt_A
             ret_errors['idt_B'] = self.loss_idt_B
+        if self.adversarial_loss_p:
+            ret_errors['Pred_A_GAN'] = self.loss_pred_A_adversarial
+            ret_errors['Pred_B_GAN'] = self.loss_pred_B_adversarial
         return ret_errors
 
     def get_current_visuals(self):
