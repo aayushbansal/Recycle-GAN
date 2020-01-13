@@ -36,6 +36,22 @@ We use this formulation in our ECCV'18 paper on unsupervised video retargeting f
 
 The repository contains the code for training a network for retargeting from one domain to another, and use a trained module for this task. Following are the things to consider with this code:
 
+### Requirements
+* Linux or MacOS
+* Python 3
+* Pytorch 0.4
+* NVIDIA GPU + CUDA CuDNN
+
+### Python Dependencies
+* numpy 1.15.0
+* torch 0.4.1.post2
+* torchvision 0.2.2
+* visdom
+* dominate
+
+Run the following command to install automatically:
+```pip install requirements.txt```
+
 ### Data pre-processing
 
 For each task, create a new folder in "dataset/" directory. The images from two domains are placed respectively in "trainA/" and "trainB/". Each image file consists of horizontally concatenated images, "{t, t+1, t+2}" frames from the video. The test images are placed in "testA/" and "testB/". Since we do not use temporal information at test time, the test data consists of single image "{t}".
