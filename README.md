@@ -62,11 +62,11 @@ There are two training modules in "scripts/" directory: (1). Recycle-GAN, (2). R
 
 ### Recycle-GAN
 
-Recycle-GAN is the module used for examples in the paper, specifically face to face, flower to flower, clouds and wind synthesis, sunrise and sunset. Recycle-GAN slightly differs from the model described in the paper, in that the recurrent loss P\_x(x\_t-i)=x\_t is instead calculated as P\_y(G\_y(x\_t-i)) = P\_y(y\_t-i), which serves as an additional temporal constraint on the outputs of G\_y.
+Recycle-GAN is the model described in the paper and is used for most examples in the paper, specifically face to face, flower to flower, clouds and wind synthesis, sunrise and sunset.
 
 ### ReCycle-GAN
 
-ReCycle-GAN is mostly similar to the model described in the paper. In addition to the Recycle loss, we also use vanilla cycle-losses from CycleGAN between corresponding source and target frames. We found this module useful for tasks such as unpaired image to labels, and labels to image on VIPER dataset, image to normals, and normals to image on NYU-v2 depth dataset.
+ReCycle-GAN is mostly similar to Recycle-GAN. Additionally, we also use vanilla cycle-losses from CycleGAN between corresponding source and target frames. We found this module useful for tasks such as unpaired image to labels, and labels to image on VIPER dataset, image to normals, and normals to image on NYU-v2 depth dataset.
 
 ## Prediction Model
 
