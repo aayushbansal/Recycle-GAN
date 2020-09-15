@@ -5,6 +5,8 @@ from data.image_folder import make_dataset
 from PIL import Image
 import PIL
 import random
+from PIL import ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 
 class UnalignedTripletDataset(BaseDataset):
