@@ -1,5 +1,5 @@
 numpy==1.15.0
-torch==0.4.1.post2
+torch==2.2.0
 torchvision==0.2.2
 visdom
 dominate
